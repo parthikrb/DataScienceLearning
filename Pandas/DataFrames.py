@@ -32,3 +32,28 @@ print(dataf.iloc[[2,3]])
 print('*#'*20)
 print('*#'*20)
 print(dataf.loc['z', 'd'])
+
+print('*%' *20)
+print('*%' *20)
+print(dataf[dataf>0])
+
+print('*%' *20)
+print('*%' *20)
+print(dataf[dataf['c']>0][['e', 'd']])
+
+print('*%' *20)
+print("Multiple Conditions --> use & instead of 'and'")
+print('*%' *20)
+print(dataf[(dataf['c']>0) & (dataf['new']<1)])
+
+print('*%' *20)
+print("Multiple Conditions --> use | instead of 'or'")
+print('*%' *20)
+print(dataf[(dataf['c']>0) | (dataf['new']<1)])
+
+print('#@$' *20)
+print('SET INDEX')
+print('@#%' *20)
+newindex = 'CA NY WY OR CO'.split()
+dataf['STATES'] = newindex
+print(dataf.set_index('STATES'))
